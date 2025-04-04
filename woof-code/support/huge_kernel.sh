@@ -189,12 +189,12 @@ else
 	if [ "$IS_KERNEL2" -gt 1 ] ; then
 		#too many, choose 1
 		choose_kernel
-	elif [ "$IS_KERNEL2" == 1 ] ; then
+	elif [ "$IS_KERNEL2" -eq 1 ] ; then
 		# 1 kernel
 		# check if it was a failed/incomplete download
 		# as it keeps hitting the same error everytime you
 		# run 3builddistro
-		if [ "$IS_KERNEL" == 1 ] ; then
+		if [ "$IS_KERNEL" -eq 1 ] ; then
 			KERNEL_VERSION=`ls ${HUGE_KERNEL_DIR}/*.tar.* 2>/dev/null | grep -v 'md5'|cut -d '-' -f2-|rev|cut -d '.' -f3-|rev`
 			download_kernel "$KERNEL_REPO_URL/$(basename ${HUGE_KERNEL_DIR}/huge-${KERNEL_VERSION}.tar.*)"
 		fi

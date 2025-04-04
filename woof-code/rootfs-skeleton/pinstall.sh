@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #post-install script.
 #Puppy Linux
 #assume current directory is rootfs-complete, which has the final filesystem.

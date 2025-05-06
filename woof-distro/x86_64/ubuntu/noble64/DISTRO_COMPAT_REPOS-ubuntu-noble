@@ -44,6 +44,7 @@ REPOS_DISTRO_COMPAT="
 z|http://archive.ubuntu.com/ubuntu|Packages-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}-*
 z|http://mirrors.kernel.org/ubuntu|Packages-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}-*
 z|ftp.osuosl.org/pub/ubuntu|Packages-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}-*
+z|https://repo.radeon.com/amdgpu/6.4/ubuntu|Packages-amdgpu-*
 "
 
 

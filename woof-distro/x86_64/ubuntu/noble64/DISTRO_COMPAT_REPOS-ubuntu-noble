@@ -29,6 +29,7 @@ z|http://archive.ubuntu.com/ubuntu/dists/${DISTRO_COMPAT_VERSION}/main/binary-${
 z|http://archive.ubuntu.com/ubuntu/dists/${DISTRO_COMPAT_VERSION}/universe/binary-${DBIN_ARCH}/Packages.${DDB_COMP}|Packages-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}-universe
 z|http://archive.ubuntu.com/ubuntu/dists/${DISTRO_COMPAT_VERSION}/multiverse/binary-${DBIN_ARCH}/Packages.${DDB_COMP}|Packages-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}-multiverse
 z|http://archive.ubuntu.com/ubuntu/dists/${DISTRO_COMPAT_VERSION}/restricted/binary-${DBIN_ARCH}/Packages.${DDB_COMP}|Packages-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}-restricted
+z|https://repo.radeon.com/amdgpu/6.4/ubuntu/dists/noble/main/binary-amd64/Packages.gz|Packages-ubuntu-noble-main
 "
 
 #-------------------

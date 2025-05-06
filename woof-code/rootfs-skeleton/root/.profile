@@ -23,7 +23,7 @@ elif command -v Xorg >/dev/null 2>&1 ; then
 	if [ ! -f /tmp/bootcnt.txt ] ; then
 		touch /tmp/bootcnt.txt
 		dmesg > /tmp/bootkernel.log
-		startplasma-wayland
+		dbus-launch startplasma-wayland
 	else
 		/usr/sbin/pm13 cli
 	fi

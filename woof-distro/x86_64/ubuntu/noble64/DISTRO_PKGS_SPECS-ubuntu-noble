@@ -345,6 +345,7 @@ yes|zlib|zlib1g,zlib1g-dev|exe,dev,doc,nls||deps:yes
 yes|zstd|zstd|exe,dev,doc,nls||deps:yes
 yes|noble64test||exe
 yes|plasma-workspace-wayland|plasma-workspace-wayland|exe||deps:yes
+yes|kwin-wayland-backend-drm|kwin-wayland-backend-drm|exe||deps:yes
 '
 
 # after dependency resolution by resolvedeps.sh
@@ -663,6 +664,7 @@ yes|zlib|zlib1g,zlib1g-dev|exe,dev,doc,nls||deps:yes
 yes|zstd|zstd|exe,dev,doc,nls||deps:yes
 yes|noble64test||exe
 yes|plasma-workspace-wayland|plasma-workspace-wayland|exe||deps:yes
+yes|kwin-wayland-backend-drm|kwin-wayland-backend-drm|exe||deps:yes
 '
 
 PKGS_SPECS_TABLE_RESOLVED=1

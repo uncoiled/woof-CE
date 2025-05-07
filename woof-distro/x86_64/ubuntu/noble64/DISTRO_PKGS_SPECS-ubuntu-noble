@@ -666,7 +666,7 @@ yes|zstd|zstd|exe,dev,doc,nls||deps:yes
 yes|noble64test||exe
 yes|plasma-workspace-wayland|plasma-workspace-wayland|exe||deps:yes
 yes|kwin-wayland-backend-drm|kwin-wayland-backend-drm|exe||deps:yes
-# yes|amdgpu-dkms-firmware|amdgpu-dkms-firmware|exe||deps:yes
+yes|amdgpu-dkms-firmware|amdgpu-dkms-firmware|exe||deps:yes
 '
 
 PKGS_SPECS_TABLE_RESOLVED=1

@@ -1151,7 +1151,7 @@ if [ "$BUILD_SFS" = 'yes' ]; then
 			rm -f build/${TYPE_SYS_SFS} 2>/dev/null
 			[ -d ${SYS_SFS}/root ] && busybox chmod 700 ${SYS_SFS}/root
 			[ -d ${SYS_SFS}/home/spot ] && busybox chmod 700 ${SYS_SFS}/home/spot
-			if ! [-f build/${TYPE_SYS_SFS}]; then
+			if [ ! -f build/${TYPE_SYS_SFS}]; then
 				mksquashfs $SYS_SFS build/${TYPE_SYS_SFS} ${SFSCOMP} #170330
 			fi
 		done
@@ -1167,7 +1167,7 @@ if [ "$BUILD_SFS" = 'yes' ]; then
 		if [ -f build/${XDRV_SFS} ] ; then
 			continue # $XDRV is created using the PKGS_SPECS
 		fi
-		if ! [ "$XDRV_URL" ] ; then
+		if [ ! "$XDRV_URL" ] ; then
 			continue
 		fi
 		../support/download_file.sh "$XDRV_URL" ../../local-repositories/sfs build/${XDRV_SFS}

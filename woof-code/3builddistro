@@ -359,6 +359,24 @@ if [ "$DISTRO_BINARY_COMPAT" = "void" ]; then
   echo "Generation finished - thanks for waiting"
 fi
 
+
+### Downloads SFS files if listed ###
+
+[ "$(echo $ADRV_SFS_URL)" != "" ] && ADRV_DL=adrv
+[ "$(echo $FDRV_SFS_URL)" != "" ] && FDRV_DL=fdrv
+[ "$(echo $YDRV_SFS_URL)" != "" ] && YDRV_DL=ydrv
+
+for _DRV in $ADRV_SFS_DL $FDRV_SFS_DL $YDRV_SFS_DL;do
+	case ${_DRV} in
+	adrv)
+		wget -O /build/${_DRV}_${DISTRO_FILE_PREFIX}_${DISTRO_VERSION}.sfs $ADRV_SFS_URL;;
+	fdrv)
+		wget -O /build/${_DRV}_${DISTRO_FILE_PREFIX}_${DISTRO_VERSION}.sfs $FDRV_SFS_URL;;
+	ydrv)
+		wget -O /build/${_DRV}_${DISTRO_FILE_PREFIX}_${DISTRO_VERSION}.sfs $YDRV_SFS_URL;;
+	esac
+done
+
 ### new {a,f,y}drv build - this sorts the packages and builds the {a,f,y}drv filesystem
 ADRV_INCLUDE='';FDRV_INCLUDE_='';YDRV_INCLUDE=''
 [ "$(echo $ADRV_INC)" != "" ] && ADRV_INCLUDE=adrv
@@ -367,6 +385,9 @@ ADRV_INCLUDE='';FDRV_INCLUDE_='';YDRV_INCLUDE=''
 if [ -n "$ADRV_INCLUDE" -o -n "$FDRV_INCLUDE" -o -n "$YDRV_INCLUDE" ];then
 	rm -f sandbox3/?pinstall.sh
 	for _DRV in  $ADRV_INCLUDE $FDRV_INCLUDE $YDRV_INCLUDE;do
+		if [ -f build/${_DRV}_${DISTRO_FILE_PREFIX}_${DISTRO_VERSION}.sfs ]; then
+			continue # Downloaded
+		fi
 		echo
 		echo "Now building sandbox3/${_DRV} with apps redirected to ${_DRV}_${DISTRO_FILE_PREFIX}_${DISTRO_VERSION}.sfs"
 		case ${_DRV} in

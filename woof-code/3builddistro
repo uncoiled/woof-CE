@@ -1,4 +1,4 @@
-#!/bin/bash
+/#!/bin/bash
 # new for fatdog style kernel
 
 export LANG=C #faster.
@@ -1131,7 +1131,7 @@ if [ "$BUILD_SFS" = 'yes' ]; then
 	#build the rootfs-complete sfs...
 	echo -e "\nNow building the main f.s., ${PUPPYSFS}..."
 	rm -f build/${PUPPYSFS} 2>/dev/null
-	 rootfs-complete build/${PUPPYSFS} ${SFSCOMP} #100911 110713
+	mksquashfs rootfs-complete build/${PUPPYSFS} ${SFSCOMP} #100911 110713
 	###########
 	if [ -d bdrv -o -d adrv -o -d fdrv -o -d ydrv ];then
 		#build the {a,f,y}drive sfs...

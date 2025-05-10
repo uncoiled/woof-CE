@@ -1142,7 +1142,9 @@ if [ "$BUILD_SFS" = 'yes' ]; then
 	do
 		IFS="|" read XDRV XDRV_URL XDRV_SFS <<< "$i"
 		if [ -f build/${XDRV_SFS} ] ; then
-			continue # $XDRV is created using the PKGS_SPECS
+			if XDRV != "fdrv"
+				continue # $XDRV is created using the PKGS_SPECS and isn't fdrv
+			fi
 		fi
 		if ! [ "$XDRV_URL" ] ; then
 			continue

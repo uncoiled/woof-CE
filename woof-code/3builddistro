@@ -1,4 +1,4 @@
-/#!/bin/bash
+#!/bin/bash
 # new for fatdog style kernel
 
 export LANG=C #faster.

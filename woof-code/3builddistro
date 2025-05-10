@@ -1151,7 +1151,9 @@ if [ "$BUILD_SFS" = 'yes' ]; then
 			rm -f build/${TYPE_SYS_SFS} 2>/dev/null
 			[ -d ${SYS_SFS}/root ] && busybox chmod 700 ${SYS_SFS}/root
 			[ -d ${SYS_SFS}/home/spot ] && busybox chmod 700 ${SYS_SFS}/home/spot
-			mksquashfs $SYS_SFS build/${TYPE_SYS_SFS} ${SFSCOMP} #170330
+			if ! [-f build/${TYPE_SYS_SFS}]; then
+				mksquashfs $SYS_SFS build/${TYPE_SYS_SFS} ${SFSCOMP} #170330
+			fi
 		done
 	fi
 	#############

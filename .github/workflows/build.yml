@@ -62,6 +62,7 @@ jobs:
           local-repositories-${{ inputs.arch }}-${{ inputs.compat-distro }}-${{ inputs.compat-distro-version }}-
     - name: Prepare build environment
       run: |
+        DISTRO_VARIANT=xwayland
         [ -f local-repositories/vercmp ] || (curl https://raw.githubusercontent.com/puppylinux-woof-CE/initrd_progs/master/pkg/w_apps_static/w_apps/vercmp.c | gcc -x c -o ../local-repositories/vercmp -)
         sudo install -m 755 local-repositories/vercmp /usr/local/bin/vercmp
         sudo install -D -m 644 woof-code/rootfs-skeleton/usr/local/petget/categories.dat /usr/local/petget/categories.dat
@@ -69,7 +70,6 @@ jobs:
         sudo DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
         sudo ln -s bash /bin/ash
         [ "${{ inputs.compat-distro }}" != void ] || echo "LD_LIBRARY_PATH=/lib:/usr/lib:/lib64:/usr/lib64" >> $GITHUB_ENV
-        sudo DISTRO_VARIANT=xwayland
     - name: merge2out
       timeout-minutes: 5
       run: |

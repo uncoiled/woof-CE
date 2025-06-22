@@ -15,11 +15,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - kernel-kit-config: 6.15.x-x86
+          - kernel-kit-config: 6.12.x-x86
             image: debian:bookworm-slim
-          - kernel-kit-config: 6.15.x-x86-pae
+          - kernel-kit-config: 6.12.x-x86-pae
             image: debian:bookworm-slim
-          - kernel-kit-config: 6.15.x-x86_64
+          - kernel-kit-config: 6.12.x-x86_64
             image: debian:bookworm-slim
     steps:
       - uses: actions/checkout@v4
@@ -52,7 +52,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        kernel-kit-config: [6.15.x-x86, 6.15.x-x86-pae, 6.15.x-x86_64]
+        kernel-kit-config: [6.12.x-x86, 6.12.x-x86-pae, 6.12.x-x86_64]
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
